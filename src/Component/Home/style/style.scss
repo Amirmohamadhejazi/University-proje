@@ -1,0 +1,280 @@
+#home{
+
+
+margin-bottom: 300px;
+
+  padding-top: 20px;
+
+  .iconTitleCard{
+    font-size: 30px;
+    margin: 0 10px 0 10px;
+  }
+
+  .itemBox{
+    position: relative;
+    --tw-bg-opacity: 1;
+    background-color: rgba(27,52,77,var(--tw-bg-opacity));
+    padding-top: 8rem;
+    margin: 50px 20px 0 20px;
+    width: 280px;
+    border-radius: 20px;
+  }
+
+  .textList {
+
+    --tw-text-opacity: 1;
+    color: rgba(59, 130, 246, var(--tw-text-opacity));
+    font-size: 12px;
+
+  }
+
+
+
+
+
+
+  .iconAvatarProf{
+    font-size: 40px!important;
+  }
+
+  .boxIcon{
+    width: 57px;
+    height: 57px;
+    border-radius: 100%;
+    margin: 20px 0 0 20px;
+    .boxIn{
+      background: #fff;
+      border-radius: 50%;
+      overflow: hidden;
+      width: 38px;
+      height: 38px;
+    }
+  }
+
+  .iconNotif{
+    background: #eb8307;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+  .notificationIcon, .notificationIconCall , .notificationIconFavorite{
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+    right: 0;
+    background: #eb8307;
+    color: #fff;
+    font-size: 85%;
+    min-width: 16px;
+    min-height: 16px;
+    line-height: 16px;
+    padding: 2px 5px;
+    border-radius: 100%;
+  }
+  .notificationIconFavorite{
+    top: 6px;
+    right: 0;
+  }
+  .notificationIconCall{
+    top: -3px;
+    right: -9px;
+  }
+
+  .boxLogin{
+    width: 180px;
+    height: 70px;
+    border-radius: 6px;
+  }
+  .AvatarIcon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+
+
+
+
+
+
+
+  .boxContent{
+
+    .WRContent{
+      width: 25%;
+    }
+    .WLContent{
+      width: 75%;
+      padding-right: 20px
+    }
+
+    @media (max-width: 1000px){
+      .WRContent{
+        width: 100%!important;
+      }
+      .WLContent{
+        width: 100%!important;
+        padding-right: 0
+      }
+    }
+    .coverMovieRight{
+      width: 100%;
+      height: 400px;
+      border-radius: 10px 10px 0 0;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    .TextOnCover{
+      font-size: 13px;
+      width: 100%;
+      background-color: #2f3136;
+      border-radius: 0 0 10px 10px;
+      height: 30px;
+      padding: 8px 0;
+      color: #fff;
+      z-index: 5;
+    }
+
+
+    .inner_box_sidebar , .item_def_loop{
+      background: #fff;
+      box-shadow: 0 0 10px rgb(200 200 200 / 20%);
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px  ;
+      margin-bottom: 30px;
+    }
+    .inner_box_sidebar{
+      display: flex;
+      flex-wrap: wrap;
+
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .item_def_loop{
+
+
+      .W_RCoverMovie{
+        width: 25%;
+      }
+      .W_LCoverMovie{
+        width: 75%;
+        padding-right:30px
+      }
+
+
+      @media (max-width: 1000px){
+        .W_RCoverMovie{
+          width: 100%!important;
+        }
+        .W_LCoverMovie{
+          width: 100%!important;
+          padding-right:0!important;
+        }
+        .CoverMovie{
+          height: auto!important;
+        }
+
+      }
+
+      .btnTrailer{
+        width: 100%;
+        height: 47px;
+        border-radius: 7px;
+        background: #ccc;
+        color: #000;
+        margin-top: 20px;
+      }
+
+      .CoverMovie{
+        width: 100%;
+        height: 310px;
+        border-radius: 10px;
+        overflow: hidden;
+
+        background-color: #2f3136;
+      }
+
+      .boxDownload{
+        position: absolute;
+        bottom: -10px;
+        left: -3px;
+        right: 0;
+        margin: auto;
+        background: #eb8307;
+        border-radius: 7px;
+        width: 30px;
+        height: 30px;
+        transform: rotate(45deg);
+        outline: 10px #f2f2f2 solid;
+        .boxIn{
+          transform: rotate(-45deg);
+        }
+      }
+
+      .position-boxSubtitle{
+        left:30px ;
+        bottom:-60px
+      }
+
+
+      @media (max-width: 1000px){
+        .position-boxSubtitle{
+          left:50px!important;
+          bottom:-60px!important;
+        }
+      }
+      .boxSubtitle{
+        width: 48px!important;
+        height: 48px!important;
+        position: absolute;
+        bottom: 300px;
+        right: 15px;
+        margin: auto;
+        background: #6c3;
+        border-radius: 7px;
+
+        transform: rotate(45deg);
+        .boxIn{
+          font-size: 25px;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+
+  }
+
+
+
+
+  @media only screen and (max-width: 600px) {
+    .itemsShop{
+      justify-content: center;
+    }
+  }
+
+}
+
+.SelectProfile{
+  outline:#F94C66 4px solid;
+  animation: color 8s infinite linear;
+  transition: 0.2s;
+  display: flex;
+  border-radius:50%
+}
+@keyframes color {
+  0%   { outline:#F94C66 4px solid  }
+  20%  { outline: #6666ff 4px solid }
+  40%  { outline: #0099ff 4px solid  }
+  60%  { outline: #00ff00 4px solid  }
+  80%  { outline: #ff3399 4px solid  }
+  100% { outline: #6666ff 4px solid  }
+}
+
+
+
+

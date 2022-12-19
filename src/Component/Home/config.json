@@ -1,0 +1,60 @@
+
+
+{
+  "DataSIde1":[
+    {
+      "name":"money Heist",
+      "season":"1",
+      "Section":"12",
+      "img":"./../../assets/pic/movie/moneyheist.png"
+    },
+    {
+      "name":"Yellow Stone",
+      "season":"5",
+      "Section":"6",
+      "img":"./../../assets/pic/movie/wednesday.jpg"
+    },
+    {
+      "name":"Wednesday",
+      "season":"1",
+      "Section":"8",
+      "img":"./../../assets/pic/movie/Yellowstone-bann.jpg"
+    },
+    {
+      "name":"shant Movie",
+      "season":"12",
+      "Section":"1",
+      "img":"./../../assets/pic/movie/shant.jpg"
+    },
+    {
+      "name":"his dark material Movie",
+      "season":"8",
+      "Section":"1",
+      "img":"./../../assets/pic/movie/hisdarkmaterial.jpg"
+    },
+    {
+      "name":"kindredMovie",
+      "season":"4",
+      "Section":"3",
+      "img":"./../../assets/pic/movie/kindred.jpg"
+    },
+    {
+      "name":"slowHorse",
+      "season":"2",
+      "Section":"4",
+      "img":"./../../assets/pic/movie/slowHorse.jpg"
+    },
+    {
+      "name":"insideJob",
+      "season":"2",
+      "Section":"8",
+      "img":"./../../assets/pic/movie/insideJob.jpg"
+    },
+    {
+      "name":"RickAndmorty",
+      "season":"6",
+      "Section":"10",
+      "img":"./../../assets/pic/movie/RickAndmorty.jpg"
+    }
+  ]
+}

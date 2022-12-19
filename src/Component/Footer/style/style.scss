@@ -1,0 +1,32 @@
+#Footer{
+  background-color: white;
+  //height: 300px;
+
+  .justify-content-Footer{
+    justify-content: space-between !important;
+  }
+  .flex-wrap-Footer{
+    flex-direction: row;
+  }
+  .boxMedia{
+    width: 250px;
+    height: 82px;
+    border-radius: 6px;
+  }
+
+  @media (max-width: 1000px){
+    .justify-content-Footer{
+      justify-content: center!important;
+    }
+    .flex-wrap-Footer{
+      flex-direction: column!important;
+      align-items: center;
+    }
+  }
+
+
+}
+
+
+
+

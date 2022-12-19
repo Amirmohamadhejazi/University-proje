@@ -1,0 +1,85 @@
+
+#login{
+  .App {
+    height: 83rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .form {
+    direction: ltr;
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .form .form__custom-button {
+    margin-top: 50px;
+  }
+  .forgetPassword{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    margin-top: 30px;
+    font-size: 15px;
+  }
+
+}
+.W_boxModalLogin{
+  width: 500px!important;
+}
+.ModalTop{
+  width:99.9%;
+  height:127%;
+  color: white;
+  position: relative;
+  background:#224c64
+}
+
+.IconRocket{
+  font-size: 80px!important;
+  color: white;
+  position: relative;
+  transform: rotate(-45deg);
+  animation: IconRocket-change 1.5s infinite alternate-reverse;
+}
+
+@keyframes IconRocket-change {
+  0% {transform: rotate(-25deg); top:0}
+  50% {transform: rotate(-45deg); top:-50px}
+  100% {transform: rotate(-65deg); top:0}
+}
+
+.Icon1 {
+  animation-duration: 1s;
+}
+.Icon2 {
+  animation-duration: 1.5s;
+}
+.Icon3 {
+  animation-duration: 2s;
+}
+.Icon1,.Icon2,.Icon3 {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #049704;
+  position: relative;
+  animation-name: Load;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+}
+
+@keyframes Load {
+  0%   {background-color: #049704}
+  //50%  {background-color:black}
+  100% {background-color:black}
+}

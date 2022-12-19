@@ -1,0 +1,55 @@
+#profile{
+  background-color: #000000;
+
+  border-radius: 10px;
+  overflow: hidden;
+    .boxEdit{
+      padding: 50px 0 10px 0;
+      margin-top: 40px;
+      border-radius: 0 0 10px 10px;
+      background-color: #202225;
+    }
+  .boxEditItems{
+    margin: 50px 20px 10px 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #2f3136;
+  }
+
+  //
+  //@media (800px < width < 1240px) {
+  //  .W_boxModal{
+  //    width: 1000px;
+  //  }
+  //}
+
+}
+.h_modalProfile{
+
+ }
+.W_boxModalProfile{
+  width: 500px!important;
+}
+@media (540px < width < 991px) {
+  .W_boxModalProfile{
+    width: 500px!important;
+  }
+}
+@media (340px < width < 540px) {
+  .W_boxModalProfile{
+    width: 330px!important;
+  }
+  .h_modalProfile{
+    max-height:500px;
+    overflow: auto;
+  }
+}
+@media (width < 340px) {
+  .W_boxModalProfile{
+    width: 95%!important;
+  }
+  .h_modalProfile{
+    max-height:500px;
+    overflow: auto;
+  }
+}
