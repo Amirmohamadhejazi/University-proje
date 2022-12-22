@@ -26,16 +26,13 @@ function App() {
         AOS.init();
     }, [])
 
-    let TokenUser = localStorage.getItem('TokenDedsecUser');
-    //
-    // useEffect(()=>{
-    //     if (!location.pathname.split("/user/me/forget/")[1] && !location.pathname.split("/user/me/email/")[1]){
-    //         if (!TokenUser){
-    //             navigate('/login');
-    //         }
-    //     }
-    //
-    // },[location.pathname, navigate, TokenUser])
+    let TokenUser = localStorage.getItem('DigiMovies');
+
+    useEffect(()=>{
+            if (!TokenUser){
+                navigate('/login');
+            }
+    },[location.pathname, navigate, TokenUser])
 
 
 

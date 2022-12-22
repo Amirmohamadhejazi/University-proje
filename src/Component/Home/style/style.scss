@@ -94,7 +94,18 @@ margin-bottom: 300px;
   }
 
 
+  //. menu desktop on
+  .d-desktop-menu{
+    display: flex;
+  }
+  .d-phone-menu{
+    display: none!important;
+  }
 
+
+  .flexWrapHeader{
+    justify-content: space-between;
+  }
 
 
 
@@ -223,7 +234,7 @@ margin-bottom: 300px;
 
       @media (max-width: 1000px){
         .position-boxSubtitle{
-          left:50px!important;
+          left:57px!important;
           bottom:-60px!important;
         }
       }
@@ -257,7 +268,34 @@ margin-bottom: 300px;
     }
   }
 
+
+  @media only screen and (max-width: 1000px) {
+    //. menu desktop off
+
+    .d-desktop-menu{
+      display: none!important;
+    }
+    .d-phone-menu{
+      display: block!important;
+    }
+    //. menu phone on
+
+
+
+
+    .flexWrapHeader{
+      flex-wrap: wrap-reverse;
+      align-items: center;
+    }
+  }
 }
+  @media only screen and (max-width: 419px) {
+    .flexWrapHeader{
+      flex-wrap: wrap-reverse;
+      align-items: center;
+      justify-content: flex-end!important;
+    }
+  }
 
 .SelectProfile{
   outline:#F94C66 4px solid;

@@ -7,8 +7,9 @@ import {
     login,
     ChangePassword,
     SendPassword,
-    LoginLoading
+    LoginLoading, LoginStep
 } from "../../Redux/Login/LoginSlice";
+import {MakeToken} from "../../constants/HelperFunction";
 import LinearProgress from '@mui/material/LinearProgress';
 
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
@@ -98,18 +99,28 @@ function Login() {
             Email: value.emailLogin,
             Password: value.passwordLogin,
         }
+        Dispatch(LoginLoading(true))
+
+        setTimeout(()=>{
+            Dispatch(LoginLoading(false))
+            Dispatch(LoginStep({Step : true , Token:MakeToken(2000)}))
+            console.log(DataPostLog)
+        },2000)
         switch(position) {
             case "0":
                 Dispatch(LoginLoading(true))
-                Dispatch(Register(DataPostReg))
+                console.log(DataPostReg)
+                // Dispatch(Register(DataPostReg))
                 break;
             case  "1":
                 Dispatch(LoginLoading(true))
-                Dispatch(login(DataPostLog))
+                // Dispatch(login(DataPostLog))
+                console.log(DataPostLog)
                 break;
             case  "2":
                 Dispatch(LoginLoading(true))
-                Dispatch(ChangePassword({Email:value.email}))
+                console.log({Email:value.email})
+                // Dispatch(ChangePassword({Email:value.email}))
                 break;
             default:
         }
@@ -157,7 +168,7 @@ function Login() {
     });
 
 
-    let TokenUser = localStorage.getItem('TokenDedsecUser');
+    let TokenUser = localStorage.getItem('DigiMovies');
 
     useEffect(()=>{
         if (TokenUser){
@@ -180,7 +191,7 @@ function Login() {
             LoadPro()
             setTimeout(()=>{
                 // console.log("1500")
-                localStorage.setItem('TokenDedsecUser', JSON.stringify(TokenStep))
+                localStorage.setItem('DigiMovies', JSON.stringify(TokenStep))
                 navigate('/');
                 setProgress(0)
                 time= -0.25
@@ -199,7 +210,7 @@ function Login() {
 
     return (
         <div id="login" >
-            <div className="App">
+            <div className="App"   data-aos="zoom-in" data-aos-duration={`700`}>
                 <form style={{zIndex:2}} className="form flex-center " onSubmit={formik.handleSubmit}>
                         <div className="w-100 d-flex flex-row mb-2">
                             <div className={["w-50 cursor_pointer ", PositionLogin === 1 && "bg-primary"].join(" ")} onClick={() => funcSwitchPage(1)} style={{borderRadius: "10px", padding: "5px"}}><span>Login</span></div>
@@ -325,7 +336,7 @@ function Login() {
                     BackdropProps={{
                         timeout: 500,
                     }}
-
+                    data-aos="fade" data-aos-duration={`700`}
                 >
                     <Box className="W_boxModalLogin" sx={style}>
                         <div className="d-flex w-100 flex-column" style={{direction:"ltr"}}>

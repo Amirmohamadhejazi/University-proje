@@ -2,6 +2,9 @@ import {useEffect , useState} from "react";
 import React from "react";
 import "react-multi-carousel/lib/styles.css";
 import { useNavigate} from "react-router-dom";
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+
 import logo1 from "./../../assets/pic/logo.png"
 import logo2 from "./../../assets/pic/digi_dark_logo.png"
 import Avatar from "./../../assets/pic/avatar.jpg"
@@ -11,6 +14,7 @@ import { MdOutlineSubtitles } from 'react-icons/md';
 import {BiMoviePlay , BiTimeFive  } from 'react-icons/bi';
 import { IoMdNotificationsOutline , IoIosPerson } from 'react-icons/io';
 import { MdHighQuality } from 'react-icons/md';
+import { HiMenuAlt3 } from 'react-icons/hi';
 import { AiOutlineFolderOpen } from 'react-icons/ai';
 import { RiUserStarLine } from 'react-icons/ri';
 import { TbWorld } from 'react-icons/tb';
@@ -21,27 +25,49 @@ import Footer from "../Footer/Footer";
 function Home() {
     let{DataSIde , DataContent}=useSelector(state=>state.HomeSlice)
 
+    const [contextMenu, setContextMenu] = React.useState(null);
     const Dispatch = useDispatch();
     const navigate = useNavigate();
-    const [open, setOpen] = useState(false)
 
-    function LogOut() {
+    const handleContextMenu = (event) => {
+        event.preventDefault();
+        setContextMenu(
+            contextMenu === null
+                ? {
+                    mouseX: event.clientX + 2,
+                    mouseY: event.clientY - 6,
+                }
+                : null,
+        );
+    };
+    const handleClose = () => {
+        setContextMenu(null);
+    };
+    const handleLogout = () => {
         window.location.reload();
         setOpen(false)
-        localStorage.removeItem('TokenDedsecUser')
+        localStorage.removeItem('DigiMovies')
         navigate('/login')
-    }
+    };
+
+
+
+    const [open, setOpen] = useState(false)
+
 
     function IconTitle(icon , Text) {
         return <div className="d-flex flex-row mb-3">
             {icon}<span className="fs-15 fw-400">{Text}</span>
         </div>
     }
+    setTimeout(()=>{
+        document.title = 'Sex';
+    },2000)
     return (
-        <div className="w-100 h-100 overflow-x-hidden">
-            <div className="container " id="home">
+        <div className="w-100 h-100">
 
-                <div className="w-100 d-flex flex-row-reverse justify-content-between text-dark ">
+            <div className="container " id="home">
+                <div className="w-100 d-flex flex-row-reverse flexWrapHeader text-dark ">
                     <div className="d-flex flex-row">
                         <div className="boxIcon brCircle flex-center position-relative">
                             <div className="notificationIcon notificationIconFavorite flex-center">
@@ -61,7 +87,7 @@ function Home() {
                             </div>
                             <IoMdNotificationsOutline className="c-grayIcon fs-35"/>
                         </div>
-                        <div className="boxLogin bg-gray d-flex flex-row-reverse justify-content-around align-items-center">
+                        <div className="boxLogin bg-gray d-flex flex-row-reverse justify-content-around align-items-center d-desktop-menu"  onContextMenu={handleContextMenu}>
                         <span className="fs-24">
                             Amir
                         </span>
@@ -69,16 +95,40 @@ function Home() {
                                 <img src={Avatar} width="100%" height="100%" alt="Avatar"/>
                             </div>
                         </div>
+                        {/*<HiMenuAlt3 className="fs-35 d-phone-menu"/>*/}
+                        <div className="flex-center AvatarIcon d-phone-menu"  onContextMenu={handleContextMenu}>
+                            <img src={Avatar} width="100%" height="100%" alt="Avatar"/>
+                        </div>
+
+
+                        <Menu
+                            open={contextMenu !== null}
+                            onClose={handleClose}
+                            anchorReference="anchorPosition"
+                            anchorPosition={
+                                contextMenu !== null
+                                    ? { top: contextMenu.mouseY, left: contextMenu.mouseX }
+                                    : undefined
+                            }
+                        >
+                            {/*<MenuItem onClick={()=>navigate('/profile')}>Profile</MenuItem>*/}
+                            <MenuItem onClick={(e)=>handleLogout(e)}>LogOut</MenuItem>
+                            <MenuItem onClick={handleClose}>Cancel</MenuItem>
+                        </Menu>
                     </div>
                 </div>
 
                 <div className="w-100 d-flex flex-row-reverse boxContent flex-wrap-reverse">
                     <div className=" WLContent ">
                         {
-                            DataContent.map((item)=>
-                                <div className="item_def_loop d-flex flex-row flex-wrap">
-                                    <div className="W_RCoverMovie d-flex flex-column ">
-                                        <div className="CoverMovie">
+                            DataContent.map((item , index)=>
+                                <div className="item_def_loop d-flex flex-row flex-wrap"
+                                     data-aos="fade-up"
+                                     data-aos-duration={`${ index % 2 ===0 ? 500 : 800}`}
+                                     key={index}
+                                >
+                                    <div className="W_RCoverMovie d-flex flex-column " >
+                                        <div className="CoverMovie" >
                                             <img src={item.img} width="100%" height="100%" className="objectFitCover" alt="Avatar"/>
                                         </div>
                                         <div className="flex-center">
@@ -136,7 +186,7 @@ function Home() {
 
                             {
                                 DataSIde.map((item,index)=>
-                                    <div className="w-100">
+                                    <div className="w-100" key={index} data-aos="zoom-in-down" data-aos-duration={`${ index % 2 ===0 ? 700 : 1000}`}>
                                         <div className="coverMovieRight " style={index===0?{height:"400px"} : {height:"80px"} }>
                                             <img src={item.img} width="100%" height="100%" className="objectFitCover" alt="Avatar"/>
                                         </div>

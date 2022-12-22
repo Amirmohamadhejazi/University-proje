@@ -27,9 +27,9 @@ function Footer() {
                 <div className="d-flex flex-row-reverse justify-content-Footer flex-wrap-Footer">
 
                     <div className="d-flex flex-column">
-                        {dataMedia.map((item)=>
+                        {dataMedia.map((item , index)=>
 
-                            <div className="boxMedia bg-gray d-flex flex-row-reverse justify-content-center align-items-center mt-4">
+                            <div className="boxMedia bg-gray d-flex flex-row-reverse justify-content-center align-items-center mt-4" key={index}>
                                 <div className="d-flex flex-column w-75 flex-center">
                                     <span>{item.name}</span>
                                     <span className="c-yellow">{item.text}</span>
