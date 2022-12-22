@@ -60,9 +60,6 @@ function Home() {
             {icon}<span className="fs-15 fw-400">{Text}</span>
         </div>
     }
-    setTimeout(()=>{
-        document.title = 'Sex';
-    },2000)
     return (
         <div className="w-100 h-100">
 
